@@ -1,0 +1,709 @@
+{
+    "BCO_id": "https://github.com/biocompute-objects/UVP/blob/master/UVP.json",
+    "type_id": "universal_varient_pipeline",
+    "bco_spec_version": "v1.2",
+    "provenance_domain": {
+        "name": "Lineage assignment for an isolate of M. tuberculosis based on its single nucleotide polymorphism (SNP) profile based on UVC v1.0.",
+        "structured_name": "Lineage assignment for an isolate of M. tuberculosis[taxonomy:1773] based on its single nucleotide polymorphism [so:0000694] (SNP) profile based on UVC v1.0.",
+        "version": "v1.0",
+        "review": [
+            {
+                "status": "approved",
+                "reviewer_comment": ["Approved by GW staff."],
+                "reviewer": {
+                    "name": "Anjan Purkayastha",
+                    "affiliation": "George Washington University",
+                    "email": "anjan.purkayastha@gmail.com",
+                    "contribution": ["curatedBy"]
+                }
+            },
+            {
+                "status": "approved",
+                "reviewer_comment": ["Approved by Critical Path Institute staff."],
+                "reviewer": {
+                    "name": "Marco Schito",
+                    "affiliation": "Critical Path Institute",
+                    "email": "mschito@c-path.org",
+                    "contribution": ["curatedBy"]
+                }
+            },
+            {
+                "status": "approved",
+                "reviewer_comment": ["Approved by Critical Path Institute staff."],
+                "reviewer": {
+                    "name": "Kenneth Ramey",
+                    "affiliation": "Critical Path Institute",
+                    "email": "kramey@c-path.org",
+                    "contribution": ["curatedBy"]
+                }
+            }
+        ],
+        "derived_from": null,
+        "obsolete": "2118-09-26T14:43:43-0400",
+        "embargo": {
+            "start_time": "2000-09-26T14:43:43-0400",
+            "end_time": "2018-10-08T18:02:33-0400"
+        },
+        "created": "2017-11-12T12:30:48-0400",
+        "modified": "2018-10-08T18:35:33-0400",
+        "digital_signature": null,
+        "contributors": [
+            {
+                "name": "Matthew Ezewudo",
+                "affiliation": "Critical Path Institute",
+                "email": "mezewudo@c-path.org",
+                "contribution": ["authoredBy"]
+            },
+            {
+                "name": "Jamie Posie",
+                "affiliation": "CDC Atlanta, GA",
+                "contribution": ["authoredBy"]
+            },
+            {
+                "name": "Anjan Purkayastha",
+                "affiliation": "George Washington University",
+                "email": "anjan.purkayastha@gmail.com",
+                "contribution": ["authoredBy","curatedBy"]
+            },
+            {
+                "name": "Marco Schito",
+                "affiliation": "Critical Path Institute",
+                "email": "mschito@c-path.org",
+                "contribution": ["authoredBy"]
+            },
+            {
+                "name": "Charles Hadley King",
+                "affiliation": "George Washington University",
+                "email": "hadley_king@gwu.edu",
+                "contribution": ["authoredBy","curatedBy"],
+                "orcid": "https://orcid.org/0000-0003-1409-4549"
+            },
+            {
+                "name": "ReseqTB Consortium",
+                "affiliation": "Critical Path Institute",
+                "email": "info@c-path.org",
+                "contribution": ["createdAt"]
+            }
+        ],
+        "license": "https://spdx.org/licenses/CC-BY-4.0.html"
+    },
+    "usability_domain": [
+        "Lineage assignment for an isolate of M. tuberculosis[taxonomy:1773] based on its single nucleotide polymorphism [so:0000694] (SNP) profile."
+    ],
+    "extension_domain": {
+        "github_extension": {
+            "github_repository": "https://github.com/CPTR-ReSeqTB/UVP",
+            "github_URI": "https://github.com/CPTR-ReSeqTB/UVP/releases/tag/v2.5.1"
+        }
+    },
+    "description_domain": {
+        "keywords": [
+            {
+                "key": "search terms",
+                "value": [
+                    "Mycobacterium tuberculosis",
+                    "Phylogenetics",
+                    "Bacterial lineage analysis",
+                    "Single Nucleotide Polymorphism",
+                    "SNP"
+                ]
+            }
+        ],
+        "xref": [
+            {
+                "namespace": "pubmed",
+                "name": "PubMed",
+                "ids": [
+                    "00000"
+                ],
+                "access_time": "2018-13-02T10:15-05:00"
+            },
+            {
+                "namespace": "so",
+                "name": "Sequence Ontology",
+                "ids": [
+                    "0000694"
+                ],
+                "access_time": "2018-13-02T10:15-05:00"
+            },
+            {
+                "namespace": "taxonomy",
+                "name": "Taxonomy",
+                "ids": [
+                    "1773"
+                ],
+                "access_time": "2018-13-02T10:15-05:00"
+            }
+        ],
+        "pipeline_steps": [
+            {
+                "step_number": "1",
+                "name": "FastQValidator",
+                "description": "To verify if input file is in fastq format",
+                "version": "1.0.5",
+                "prerequisite": null,
+                "input_list": [
+                    {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_input_fastq_files/ERR552106_1.fastq.gz"
+                    },
+                    {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_input_fastq_files/ERR552106_2.fastq.gz"
+                    }
+                ],
+                "output_list": [
+                    {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/validation/Validation_report.txt"
+                    }
+                ]
+            },
+            {
+                "step_number": "2",
+                "name": "FastQC",
+                "description": "assess Quality of raw sequence reads",
+                "version": "0.11.5",
+                "prerequisite": null,
+                "input_list": [
+                    {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_input_fastq_files/ERR552106_1.fastq.gz"
+                    },
+                    {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_input_fastq_files/ERR552106_2.fastq.gz"
+                    }
+                ],
+                "output_list": [
+                    {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/fastqc/ERR552106_1_fastqc.html"
+                    },
+                    {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/fastqc/ERR552106_1_fastqc.zip"
+                    },
+                    {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/fastqc/ERR552106_2_fastqc.html"
+                    },
+                    {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/fastqc/ERR552106_2_fastqc.zip"
+                    }
+                ]
+            },
+            {
+                "step_number": "3",
+                "name": "Kraken",
+                "description": "Assesses species specificity of sequence reads",
+                "version": "0.10.5",
+                "prerequisite": null,
+                "input_list": [
+                    {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_input_fastq_files/ERR552106_1.fastq.gz"
+                    },
+                    {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_input_fastq_files/ERR552106_2.fastq.gz"
+                    }
+                ],
+                "output_list": [
+                    {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/kraken/final_report.txt"
+                    }
+                ]
+            },
+            {
+                "step_number": "4",
+                "name": "BWA",
+                "description": "Aligns sequence reads to reference genome",
+                "version": "0.7.12",
+                "prerequisites": [
+                    {
+                        "name": "M. tuberculosis H37Rv genome reference file",
+                        "source": {
+                                "address":"http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/NC_000962.fa"
+                            }
+                    }
+                ],
+                "input_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_input_fastq_files/ERR552106_1.fastq.gz"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_input_fastq_files/ERR552106_2.fastq.gz"}
+                ],
+                "output_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/bam_files/ERR552106.bam"}
+                ]
+            },
+            {
+                "step_number": "5",
+                "name": "Qualimap",
+                "description": "Assess mapping quality of aligned reads",
+                "version": "2.1.1",
+                "prerequisites": null,
+                "input_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/bam_files/ERR552106.bam"}
+                ],
+                "output_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/agogo.css"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/ajax-loader.gif"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/basic.css"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/bgfooter.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/bgtop.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/comment-bright.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/comment-close.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/comment.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/doctools.js"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/down-pressed.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/down.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/file.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/jquery.js"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/minus.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/plus.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/pygments.css"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/qualimap_logo_small.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/report.css"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/searchtools.js"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/underscore.js"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/up-pressed.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/up.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/css/websupport.js"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/images_qualimapReport/genome_coverage_0to50_histogram.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/images_qualimapReport/genome_coverage_across_reference.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/images_qualimapReport/genome_coverage_histogram.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/images_qualimapReport/genome_coverage_quotes.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/images_qualimapReport/genome_gc_content_per_window.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/images_qualimapReport/genome_homopolymer_indels.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/images_qualimapReport/genome_insert_size_across_reference.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/images_qualimapReport/genome_insert_size_histogram.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/images_qualimapReport/genome_mapping_quality_across_reference.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/images_qualimapReport/genome_mapping_quality_histogram.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/images_qualimapReport/genome_reads_clipping_profile.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/images_qualimapReport/genome_reads_content_per_read_position.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/images_qualimapReport/genome_uniq_read_starts_histogram.png"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/raw_data_qualimapReport/coverage_across_reference.txt"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/raw_data_qualimapReport/coverage_histogram.txt"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/raw_data_qualimapReport/duplication_rate_histogram.txt"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/raw_data_qualimapReport/genome_fraction_coverage.txt"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/raw_data_qualimapReport/homopolymer_indels.txt"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/raw_data_qualimapReport/insert_size_across_reference.txt"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/raw_data_qualimapReport/insert_size_histogram.txt"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/raw_data_qualimapReport/mapped_reads_clipping_profile.txt"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/raw_data_qualimapReport/mapped_reads_gc-content_distribution.txt"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/raw_data_qualimapReport/mapped_reads_nucleotide_content.txt"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/raw_data_qualimapReport/mapping_quality_across_reference.txt"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/raw_data_qualimapReport/mapping_quality_histogram.txt"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/genome_results.txt"},
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/qualimap/qualimapReport.html"}
+                ]
+            },
+            {
+                "step_number": "6",
+                "name": "MarkDuplicates",
+                "description": "Removes duplicate reads from alignment",
+                "version": "1.134",
+                "prerequisites": null,
+                "input_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/bam_files/ERR552106.bam"}
+                ],
+                "output_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/bam_files/ERR552106.no_dups.bam"}
+                ]
+            },
+            {
+                "step_number": "7",
+                "name": "IndelRealigner",
+                "description": "Perfoms re-alignment around insertions and deletions",
+                "version": "3.4.0",
+                "prerequisites": [
+                    {
+                        "name": "M. tuberculosis H37Rv genome reference file",
+                        "source": {
+                            "address":"http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/NC_000962.fa"
+                        }
+                    }
+                ],
+                "input_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/bam_files/ERR552106.no_dups.bam"}
+                ],
+                "output_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/bam_files/ERR552106.realigned.bam"}
+                ]
+            },
+            {
+                "step_number": "8",
+                "name": "BaseRecalibrator",
+                "description": "Recalibrates base quality scores",
+                "version": "3.4.0",
+                "prerequisites": [
+                    {
+                        "name": "M. tuberculosis H37Rv genome reference file",
+                        "source": {
+                                "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/NC_000962.fa"
+                        }
+                    },
+                    {
+                        "name": "Variation sites file",
+                        "source": {
+                                "address":"http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/snps.vcf"
+                        }
+                    }
+                ],
+                "input_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/bam_files/ERR552106.realigned.bam"}
+                ],
+                "output_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/bam_files/ERR552106.recalibrated.bam"}
+                ]
+            },
+            {
+                "step_number": "9",
+                "name": "BuildBamIndex",
+                "description": "Indexes sorted BAM files for variant calling",
+                "version": "1.134",
+                "prerequisites": null,
+                "input_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/bam_files/ERR552106.recalibrated.bam"}
+                ],
+                "output_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/bam_files/ERR552106.recalibrated.bai"}
+                ]
+            },
+            {
+                "step_number": "10",
+                "name": "UnifiedGenotyper",
+                "description": "Calls variant positions in alignment",
+                "version": "3.4.0",
+                "prerequisites": [
+                    {
+                        "name": "M. tuberculosis H37Rv genome reference file",
+                        "source": {
+                                "address":"http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/NC_000962.fa"
+                        }
+                    }
+                ],
+                "input_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/bam_files/ERR552106.recalibrated.bam"}
+                ],
+                "output_list": [
+                    {"address":"http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_GATK.vcf"},
+                    {"address":"http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_GATK.mpileup"}
+                ]
+            },
+            {
+                "step_number": "11",
+                "name": "VCFtools",
+                "description": "Filters raw VCF to exclude poor quality variants",
+                "version": "0.1.12b",
+                "tool_package": "VCFtools",
+                "prerequisites": [
+                    {
+                        "name": "Excluded list file",
+                        "source": {
+                                "address":"http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/excluded_loci.txt"
+                        }
+                    }
+                ],
+                "input_list": [
+                    {"address":"http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_GATK.vcf"}
+                ],
+                "output_list": [
+                    {"address":"http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_GATK_filtered.vcf"}
+                ]
+            },
+            {
+                "step_number": "12",
+                "name": "SnpEff",
+                "description": "Annotates variants in VCF file",
+                "version": "4.1",
+                "prerequisites": [
+                    {
+                        "name": "M. tuberculosis H37Rv GenBank File",
+                        "source": {
+                                "address":"http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/NC_000962.gbk"
+                        }
+                    }
+                ],
+                "input_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_GATK_filtered.vcf"}
+                ],
+                "output_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_GATK_annotated.vcf"}
+                ]
+            },
+            {
+                "step_number": "13",
+                "name": "parse_annotation.py",
+                "description": "Parses annotated VCF to create annotation text file",
+                "version": "",
+                "prerequisites": null,
+                "input_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_GATK_annotated.vcf"}
+                ],
+                "output_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_Final_annotation.txt"}
+                ]
+            },
+            {
+                "step_number": "14",
+                "name": "lineage_parser.py",
+                "description": "Assigns Mycobacterium tuberculosis Complex lineage to isolate",
+                "version": null,
+                "prerequisites": [
+                    {
+                        "name": "Lineage Markers File",
+                        "source": {
+                                "address":"http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/lineage_markers.txt"
+                        }
+                    }
+                ],
+                "input_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_Final_annotation.txt"}
+                ],
+                "output_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106.lineage_report.txt"}
+                ]
+            },
+            {
+                "step_number": "15",
+                "name": "BEDtools",
+                "description": "Creates loci based coverage statistics of genome coverage",
+                "version": "2.17.0",
+                "prerequisites": null,
+                "input_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/bam_files/ERR552106.recalibrated.bam"}
+                ],
+                "output_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_genome_region_coverage.txt"}
+                ]
+            },
+            {
+                "step_number": "16",
+                "name": "resis_parser.py",
+                "description": "Creates a coverage depth and width table of all loci in isolate genome",
+                "version": "",
+                "prerequisites": null,
+                "input_list": [
+                    {"address": "[path_to_genome_loci_text_file]"},
+                    {"address": "[path_to_per_position_depth_text_file]"}
+                ],
+                "output_list": [
+                    {"address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_Coverage.txt"}
+                ]
+            }
+        ]
+    },
+    "execution_domain": {
+        "script_access_type": "URI",
+        "script": ["https://github.com/CPTR-ReSeqTB/UVP/blob/master/scripts/UVP.py"],
+        "script_driver": "Python",
+        "pipeline_version": "2.4.1",
+        "platform": "Linux",
+        "software_prerequisites": [
+            {
+                "name": "BEDtools",
+                "version": "2.17.0",
+                "uri": {
+                    "address": "https://github.com/arq5x/bedtools/releases/tag/v2.17.0",
+                    "access_time": "2018-10-08T18:35:33-0400",
+                    "sha1_chksum": "5e4507c54355a4a38c6d3e7497a2836a123c6655"
+                 }
+            },
+            {
+                "name": "Bcftools",
+                "version": "1.2",
+                "uri": {
+                    "address": "https://github.com/samtools/bcftools/releases/download/1.2/bcftools-1.2.tar.bz2",
+                    "access_time": "2018-10-08T18:35:33-0400",
+                    "sha1_chksum": "352908143497da0640b928248165e83212dc4298"
+                }
+            },
+            {
+                "name": "BWA",
+                "version": "0.7.12",
+                "uri": {
+                    "address": "https://sourceforge.net/projects/bio-bwa/files/bwa-0.7.12.tar.bz2/download",
+                    "access_time": "2018-10-08T18:35:33-0400",
+                    "sha1_chksum": "6389ca75328bae6d946bfdd58ff4beb0feebaedd"
+                }
+            },
+            {
+                "name": "FastQC",
+                "version": "0.11.5",
+                "uri": {
+                    "address": "https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/fastq_screen_v0.13.0.tar.gz",
+                    "access_time": "2018-10-08T18:35:33-0400"
+                }
+            },
+            {
+                "name": "GATK",
+                "version": "3.4.0",
+                "uri": {
+                    "address": "https://github.com/broadgsa/gatk-protected/releases/tag/3.4",
+                    "access_time": "2018-10-08T18:35:33-0400",
+                    "sha1_chksum": "f19618653a0d23baaf147efe7f14aeb4eeb0cbb8"
+                }
+            },
+            {
+                "name": "Kraken",
+                "version": "0.10.5",
+                "uri": {
+                    "address": "https://ccb.jhu.edu/software/kraken/dl/kraken-0.10.5-beta.tgz",
+                    "access_time": "2018-10-08T18:35:33-0400"
+                }
+            },
+            {
+                "name": "Picard",
+                "version": "1.134",
+                "uri": {
+                    "address": "https://github.com/broadinstitute/picard/releases/tag/1.134",
+                    "access_time": "2018-10-08T18:35:33-0400",
+                    "sha1_chksum": "a7a08c474e4d99346eec7a9956a8fe71943b5d80"
+                }
+            },
+            {
+                "name": "Pigz",
+                "version": "2.3.3",
+                "uri": {
+                    "address": "http://springdale.math.ias.edu/data/puias/unsupported/7/SRPMS/pigz-2.3.3-1.sdl7.src.rpm",
+                    "access_time": "2018-10-08T18:35:33-0400"
+                }
+            },
+            {
+                "name": "Qualimap",
+                "version": "2.11",
+                "uri": {
+                    "address": "https://bitbucket.org/kokonech/qualimap/downloads/qualimap_v2.1.1.zip",
+                    "access_time": "2018-10-08T18:35:33-0400"
+                }
+            },
+            {
+                "name": "Samtools",
+                "version": "1.2",
+                "uri": {
+                    "address": "https://github.com/samtools/samtools/archive/1.2.zip",
+                    "access_time": "2018-10-08T18:35:33-0400"
+                }
+            },
+            {
+                "name": "SnpEff",
+                "version": "4.1",
+                "uri": {
+                    "address": "https://sourceforge.net/projects/snpeff/files/snpEff_v4_1l_core.zip/download",
+                    "access_time": "2018-10-08T18:35:33-0400",
+                    "sha1_chksum": "c96e21564b05d6a7912e4dd35f9ef6fe2e094fbb"
+                }
+            },
+            {
+                "name": "Vcftools",
+                "version": "0.1.12b",
+                "uri": {
+                    "address": "https://sourceforge.net/projects/vcftools/files/vcftools_0.1.12.tar.gz/download",
+                    "access_time": "2018-10-08T18:35:33-0400",
+                    "sha1_chksum": "29a1ab67786e39be57cbb1ef4e0f6682110b7516"
+                }
+            }
+        ],
+        "domain_prerequisites": [
+            {
+                "name": "BCOReSeqTB",
+                "url": "https://github.com/CPTR-ReSeqTB/UVP/"
+            }
+        ],
+        "env_parameters": {
+            "key": "core", 
+            "value": "8"
+        }
+    },
+    "parametric_domain" : null,
+    "io_domain": {
+        "input_subdomain": {
+            "reference_files": [
+                {
+                    "name": "Mycobacterium tuberculosis H37Rv, complete genome",
+                    "source":{
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/NC_000962.fa"
+                    }
+                },
+                {
+                    "name": "Mycobacterium tuberculosis H37Rv, complete genome",
+                    "source":{
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/NC_000962.gbk"
+                    }
+                },
+                {
+                    "name": "excluded_loci",
+                    "source": {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/excluded_loci.txt"
+                    }
+                },
+                {
+                    "name": "lineage_markers",
+                    "source": {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/lineage_markers.txt"
+                    }
+                },
+                {
+                    "name": "variation sites",
+                    "source": {
+                        "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_reference_files/snps.vcf"}
+                }
+            ],
+            "read_files": [
+                "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_input_fastq_files/ERR552106_2.fastq.gz",
+                "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_input_fastq_files/ERR552106_1.fastq.gz"
+            ]
+        },
+        "output_subdomain": [
+            {
+                "mediatype": "text/csv", 
+                "uri": {
+                    "address": "http://bco.reseqtb.org/UVP-BCO/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106.lineage_report.txt"
+                }
+            },
+            {
+                "mediatype": "text/csv", 
+                "uri": {
+                    "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106.log"
+                }
+            },
+            {
+                "mediatype": "text/csv", 
+                "uri": {
+                    "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_Coverage.txt"
+                }
+            },
+            {
+                "mediatype": "text/csv", 
+                "uri": {
+                    "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106ERR552106_Final_annotation.txt"
+                }
+            },
+            {
+                "mediatype": "text/csv", 
+                "uri": {
+                    "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_GATK.vcf"
+                }
+            },
+            {
+                "mediatype": "text/csv", 
+                "uri": {
+                    "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_GATK_filtered.vcf"
+                }
+            },
+            {
+                "mediatype": "text/csv", 
+                "uri": {
+                    "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_Lineage.txt"
+                }
+            },
+            {
+                "mediatype": "text/csv", 
+                "uri": {
+                    "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_deleted_loci.txt"
+                }
+            },
+            {
+                "mediatype": "text/csv", 
+                "uri": {
+                    "address": "http://bco.reseqtb.org/UVP-BCO/UVPv2.4.1_sample_results/ERR552106/ERR552106_genome_region_coverage.txt"
+                }
+            }
+        ]
+    },
+    "error_domain": {
+        "empirical_error": null,
+        "algorithmic_error": null
+    }
+}
