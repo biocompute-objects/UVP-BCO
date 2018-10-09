@@ -1,5 +1,5 @@
 {
-    "BCO_id": "https://github.com/biocompute-objects/UVP/blob/master/UVP.json",
+    "BCO_id": "https://github.com/biocompute-objects/UVP-BCO/blob/master/UVP_BCO.json",
     "type_id": "universal_varient_pipeline",
     "bco_spec_version": "v1.2",
     "provenance_domain": {
