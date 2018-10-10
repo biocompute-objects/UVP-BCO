@@ -1,4 +1,4 @@
-Unified variant pipeline (UVP)BioCompute Object
+Unified variant pipeline (UVP) BioCompute Object
 ===============================================
 
 GitHub repository for Unified variant pipeline (UVP):
