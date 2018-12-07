@@ -1,0 +1,271 @@
+{
+    "error_domain": {
+        "empirical_error": {
+            "description": [
+                "This test object represents tests done with single lineage sequences to establish the sensitivity of UVP to detect lineage and antibiotic resistant variants",
+                "Test objective was to evaluate the ability of UVP to identify strain lineage and antibiotic resistant variants from samples of high, medium, low sequence qualities and depths of coverage of 10, 15, 20, 25 and 30-fold. Simulated reads developed from 12 lineage-specific M. tuberculosis (Mtb) genome sequences were used to test UVP."
+            ],
+            "parameters": {
+                "sample_type": "single Mtb lineages (n = 12) with antibiotic resistant variants introduced in silico",
+                "total_sample_size": "180",
+                "platform": "Illumina HiSeq 2000",
+                "paired_end": true,
+                "length": "100",
+                "simulated": true,
+                "program": "ART",
+                "simulator_parameters": [
+                    {
+                        "ss": "hs20"
+                    },
+                    {
+                        "l": "100"
+                    },
+                    {
+                        "m": "500"
+                    },
+                    {
+                        "qU": "45"
+                    },
+                    {
+                        "s": "100"
+                    }
+                ],
+                "sequence_quality_level_parameters": {
+                    "description": "these correspond to the ART parameters: qs, qs2, ir, ir2, dr, dr2.",
+                    "sequence_quality_high": {
+                        "substitution_error_rate_R1": "0.0004",
+                        "substitution_error_rate_R2": "0.0007",
+                        "insertion_error_rate_R1": "0.00009",
+                        "insertion_error_rate_R2": "0.00015",
+                        "deletion_error_rate_R1": "0.00011",
+                        "deletion_error_rate_R2": "0.00023",
+                        "units": "errors per sequenced base"
+                    },
+                    "sequence_quality_medium": {
+                        "substitution_error_rate_R1": "0.004",
+                        "substitution_error_rate_R2": "0.007",
+                        "insertion_error_rate_R1": "0.0009",
+                        "insertion_error_rate_R2": "0.0015",
+                        "deletion_error_rate_R1": "0.0011",
+                        "deletion_error_rate_R2": "0.0023",
+                        "units": "errors per sequenced base"
+                    },
+                    "sequence_quality_low": {
+                        "substitution_error_rate_R1": "0.04",
+                        "substitution_error_rate_R2": "0.07",
+                        "insertion_error_rate_R1": "0.009",
+                        "insertion_error_rate_R2": "0.015",
+                        "deletion_error_rate_R1": "0.011",
+                        "deletion_error_rate_R2": "0.023",
+                        "units": "errors per sequenced base"
+                    }
+                }
+            },
+            "summary results": {
+                "sequence_quality_high": {
+                    "sample size": "60",
+                    "result": {
+                        "lineage_assignment_rate": "93.33",
+                        "mean_AR_identification_rate": "86.72",
+                        "Units": "Percentage"
+                    }
+                },
+                "sequence_quality_medium": {
+                    "sample size": "60",
+                    "result": {
+                        "lineage_assignment_rate": "90.00",
+                        "mean_AR_identification_rate": "81.00",
+                        "Units": "Percentage"
+                    }
+                },
+                "sequence_quality_low": {
+                    "sample size": "60",
+                    "result": {
+                        "lineage_assignment_rate": "0.00",
+                        "mean_AR_identification_rate": "0.00",
+                        "Units": "Percentage"
+                    }
+                },
+                "coverage_10": {
+                    "sample size": "36",
+                    "result": {
+                        "lineage_assignment_rate": "41.67",
+                        "mean_AR_identification_rate": "22.42",
+                        "Units": "Percentage"
+                    }
+                },
+                "coverage_15": {
+                    "sample size": "36",
+                    "result": {
+                        "lineage_assignment_rate": "63.89",
+                        "mean_AR_identification_rate": "57.14",
+                        "Units": "Percentage"
+                    }
+                },
+                "coverage_20": {
+                    "sample size": "36",
+                    "result": {
+                        "lineage_assignment_rate": "66.67",
+                        "mean_AR_identification_rate": "66.46",
+                        "Units": "Percentage"
+                    }
+                },
+                "coverage_25": {
+                    "sample size": "36",
+                    "result": {
+                        "lineage_assignment_rate": "66.67",
+                        "mean_AR_identification_rate": "66.66",
+                        "Units": "Percentage"
+                    }
+                },
+                "coverage_30": {
+                    "sample size": "36",
+                    "result": {
+                        "lineage_assignment_rate": "66.67",
+                        "mean_AR_identification_rate": "66.66",
+                        "Units": "Percentage"
+                    }
+                }
+            },
+            "detailed results": [
+                {
+                    "sequence_quality_high": {
+                        "coverage_10": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "66.67",
+                                "mean_AR_identification_rate": "40.75",
+                                "Units": "Percentage"
+                            }
+                        },
+                        "coverage_15": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "100.00",
+                                "mean_AR_identification_rate": "92.85",
+                                "Units": "Percentage"
+                            }
+                        },
+                        "coverage_20": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "100.00",
+                                "mean_AR_identification_rate": "100.00",
+                                "Units": "Percentage"
+                            }
+                        },
+                        "coverage_25": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "100.00",
+                                "mean_AR_identification_rate": "100.00",
+                                "Units": "Percentage"
+                            }
+                        },
+                        "coverage_30": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "100.00",
+                                "mean_AR_identification_rate": "100.00",
+                                "Units": "Percentage"
+                            }
+                        }
+                    }
+                },
+                {
+                    "sequence_quality_medium": {
+                        "coverage_10": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "58.34",
+                                "mean_AR_identification_rate": "26.50",
+                                "Units": "Percentage"
+                            }
+                        },
+                        "coverage_15": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "91.66",
+                                "mean_AR_identification_rate": "78.57",
+                                "Units": "Percentage"
+                            }
+                        },
+                        "coverage_20": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "100.00",
+                                "mean_AR_identification_rate": "99.40",
+                                "Units": "Percentage"
+                            }
+                        },
+                        "coverage_25": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "100.00",
+                                "mean_AR_identification_rate": "100.00",
+                                "Units": "Percentage"
+                            }
+                        },
+                        "coverage_30": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "100.00",
+                                "mean_AR_identification_rate": "100.00",
+                                "Units": "Percentage"
+                            }
+                        }
+                    }
+                },
+                {
+                    "sequence_quality_low": {
+                        "coverage_10": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "0.00",
+                                "mean_AR_identification_rate": "0.00",
+                                "Units": "Percentage"
+                            }
+                        },
+                        "coverage_15": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "0.00",
+                                "mean_AR_identification_rate": "0.00",
+                                "Units": "Percentage"
+                            }
+                        },
+                        "coverage_20": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "0.00",
+                                "mean_AR_identification_rate": "0.00",
+                                "Units": "Percentage"
+                            }
+                        },
+                        "coverage_25": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "0.00",
+                                "mean_AR_identification_rate": "0.00",
+                                "Units": "Percentage"
+                            }
+                        },
+                        "coverage_30": {
+                            "sample size": "12",
+                            "result": {
+                                "lineage_assignment_rate": "0.00",
+                                "mean_AR_identification_rate": "0.00",
+                                "Units": "Percentage"
+                            }
+                        }
+                    }
+                }
+            ],
+            "admixture_results": {
+            }
+        },
+        "algorithmic_error": [
+            "//placeholder for algorithmic error domain"
+        ]
+    }
+}

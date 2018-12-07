@@ -7,6 +7,10 @@ https://github.com/CPTR-ReSeqTB/UVP
 GitHub repository for BioCompute Objects:
 https://github.com/biocompute-objects/
 
+## User Guide 
+
+The [BioCompute Objects user guide](https://github.com/biocompute-objects/BCO_Specification/blob/master/user_guide.md) provides an introduction to implementing/writing a BCO for a pipeline and/or a workflow, and is taken from the [BioCompute Objects Specification Document](/IEEE_Docs/standard.md).
+
 ----------------------------------------------------
 The UVP BCO was made to standardize how we communicate the process for imputing drug resistance profiles using sequence-based technologies. 
 The UVP incorporates a suite of the most current bioinformatics analysis tools, written in python scripting language.
@@ -15,6 +19,18 @@ In broad outline, there are four major steps implemented in the pipeline:
 2. Sequence reads mapping & refinement
 3. Variant calling
 4. Functional annotation & lineage analysis
+
+### Repository
+
+Note that unless you are viewing a [release](https://github.com/biocompute-objects/UVP/releases) this is a draft subject to change.
+
+Table of content:
+
+* [README.md](README.md)
+* [The UVP BioCompute Object](UVP.json)
+* [The UVP `Empirical Error` Domain](UVP_error_domain.json)
+* [Raw UVP error domain text file](UVP_error_domain.txt)
+
 
 ## Software dependencies and Example files:
 
